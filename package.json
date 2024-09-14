@@ -1,0 +1,30 @@
+{
+  "name": "node-auth-kit",
+  "version": "1.0.0",
+  "description": "this a starter kit for node.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js",
+    "start": "nodemon index.js",
+    "build:css": "postcss ./assets/css/input.css -o ./public/css/output.css",
+    "build:postcss": "npx concurrently 'postcss ./assets/css/input.css -o ./public/css/output.css'",
+    "platform:start": "npm run build:postcss && npm run start"
+  },
+  "keywords": [
+    "auth",
+    "node"
+  ],
+  "author": "kossi coder",
+  "license": "ISC",
+  "dependencies": {
+    "edge.js": "^6.0.2",
+    "express": "^4.21.0",
+    "flowbite": "^2.5.1"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.20",
+    "nodemon": "^3.1.4",
+    "postcss": "^8.4.47",
+    "tailwindcss": "^3.4.11"
+  }
+}
