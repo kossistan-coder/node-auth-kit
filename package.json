@@ -6,8 +6,8 @@
   "scripts": {
     "test": "node index.js",
     "start": "nodemon index.js",
-    "build:css": "postcss ./assets/css/input.css -o ./public/css/output.css",
-    "build:postcss": "npx concurrently 'postcss ./assets/css/input.css -o ./public/css/output.css'",
+    "build:css": "npx postcss ./assets/css/input.css -o ./public/css/output.css",
+    "build:postcss": "npm run build:css",
     "platform:start": "npm run build:postcss && npm run start"
   },
   "keywords": [
@@ -17,14 +17,19 @@
   "author": "kossi coder",
   "license": "ISC",
   "dependencies": {
+    "awilix-express": "^9.0.1",
+    "awilix-router-core": "^2.0.0",
+    "concurrently": "^9.0.1",
     "edge.js": "^6.0.2",
     "express": "^4.21.0",
+    "express-edge": "^3.0.0",
     "flowbite": "^2.5.1"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.20",
     "nodemon": "^3.1.4",
     "postcss": "^8.4.47",
+    "postcss-cli": "^11.0.0",
     "tailwindcss": "^3.4.11"
   }
 }
