@@ -1,5 +1,5 @@
 {
-  "name": "node-auth-kit",
+  "name": "Tech-Live-Series",
   "version": "1.0.0",
   "description": "this a starter kit for node.js",
   "main": "index.js",
@@ -17,6 +17,7 @@
   "author": "kossi coder",
   "license": "ISC",
   "dependencies": {
+    "awilix": "^11.0.0",
     "awilix-express": "^9.0.1",
     "awilix-router-core": "^2.0.0",
     "concurrently": "^9.0.1",

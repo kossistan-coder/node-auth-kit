@@ -1,12 +1,19 @@
 const express = require('express')
-const AuthController = require('../controllers/auth.controller')
-const AdminController = require('../controllers/admin.controller')
+const { scopePerRequest, makeInvoker, route } = require('awilix-express');
+
 const router = express.Router()
-
-router.get('/login', (req, res) => AuthController.login(req, res))
-router.get('/register', (req, res) => AuthController.register(req, res))
+const UserController = require('../controllers/user.controller')
 
 
-router.get('/overview',(req,res)=>AdminController.index(req,res))
+
+const container = require('../container')
+router.use(scopePerRequest(container))
+
+const userController = makeInvoker(UserController);
+
+router.get('/login', userController('login'))
+router.get('/',userController('index'))
+
+
 
 module.exports = router
